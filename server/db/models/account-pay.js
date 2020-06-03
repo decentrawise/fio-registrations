@@ -31,6 +31,11 @@ module.exports = (sequelize, DataTypes) => {
     account_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'register'
     }
   }, {
     tableName: 'account_pay',
