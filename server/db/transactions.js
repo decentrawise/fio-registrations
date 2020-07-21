@@ -11,7 +11,7 @@ async function history(publicKey, type = null, options = {}) {
 
   const sumSelect2 =
     type === 'total' ? `) balance` :
-    type === 'credits' ? `) balance group by owner_key having sum(total) < 0` :
+    type === 'credits' ? `) balance group by owner_key having sum(total) > 0` :
     ''
 
   const [result] = await sequelize.query(`
